@@ -1,0 +1,22 @@
+#Created in python
+
+from math import *
+T = int(raw_input())
+
+for i in range(T):
+    A_B = raw_input().split()
+    A, B = int(A_B[0]), int(A_B[1])
+    numOfPerfectSquares = 0
+    count = A
+    n = 0
+    
+    while count <= B:
+        squareRoot = sqrt(count)
+        if float(squareRoot) == int(squareRoot):
+            numOfPerfectSquares += 1
+            n = 1 + (2 * squareRoot)
+            count += n
+        else:
+            count += 1
+        
+    print numOfPerfectSquares
