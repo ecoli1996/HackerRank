@@ -1,0 +1,26 @@
+#Created in python
+
+def  maxXor( l,  r):
+    maxNum = 0
+    count = l
+
+    while count < r:
+        for i in range(count, r+1):
+            num = count ^ i
+            if num > maxNum:
+                maxNum = num
+        count += 1
+    return maxNum
+
+
+listOfMaxiumums = []
+
+_l = int(raw_input())
+
+_r = int(raw_input())
+
+res = maxXor(_l, _r)
+
+listOfMaxiumums.append(res)
+for i in range(len(listOfMaxiumums)):
+    print listOfMaxiumums[i]
