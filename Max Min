@@ -1,0 +1,16 @@
+N = input()
+K = input()
+
+listOfCandies = [int(raw_input()) for i in range(0,N)]
+
+listOfCandies.sort()
+
+lastVal = listOfCandies[-1];
+    
+for i in xrange(N - K + 1):
+	
+    if (listOfCandies[i + K - 1] - candies[i]) < lastVal:
+	    
+	lastVal = candies[i + K - 1] - candies[i]
+
+print lastVal
