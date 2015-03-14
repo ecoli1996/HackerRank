@@ -1,0 +1,23 @@
+#Created in python
+
+testCases = int(raw_input())
+startingHeight = 1
+listOfHeights = []
+
+for i in range(testCases):
+
+    numberOfCycles = int(raw_input())
+    totalHeight = 1
+
+    if numberOfCycles != 0:
+        for j in range(1, numberOfCycles+1):
+            cycle = j
+            if cycle % 2 != 0:
+                totalHeight *= 2
+            else:
+                totalHeight += 1
+
+    listOfHeights.append(totalHeight)
+
+for s in range(len(listOfHeights)):
+    print listOfHeights[s]
