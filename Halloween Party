@@ -1,0 +1,16 @@
+#Created in python
+
+T = int(raw_input())
+prodList = []
+for i in range(T):
+    K = int(raw_input())
+
+    numOfVertLines = K // 2
+    numOfHorzLines = K - numOfVertLines
+
+
+    product = numOfVertLines * numOfHorzLines
+    prodList.append(product)
+
+for j in range(len(prodList)):
+    print prodList[j]
