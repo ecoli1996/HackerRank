@@ -1,0 +1,27 @@
+#Created in python
+
+# N = num of empty candy jars
+# M = num of operations
+import numbers
+
+N_M = raw_input()
+N, M = int(N_M.split()[0]), int(N_M.split()[1])
+totalSum = 0
+
+
+for i in range(M):
+    # a and b = indices of the jars
+    # k = number of candies added inside each jar
+    # k's index lies inclusively between a and b
+
+    a_b_k = raw_input().split()
+    a, b, k = int(a_b_k[0]), int(a_b_k[1]), int(a_b_k[2])
+
+    totalSum += (b-a+1) * k
+
+# totalSum = sum(listOfJars)
+# totalAverage = int(totalSum / N)
+
+totalAverage = totalSum / N
+
+print totalAverage
