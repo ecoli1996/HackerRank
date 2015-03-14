@@ -1,0 +1,21 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+T = int(raw_input())
+for i in range (0,T):
+    A,B,C1 = [int(x) for x in raw_input().split(' ')]
+    
+    answer = 0
+    numOfWrappers = 0
+
+    #A = amount of money in pocket
+    #B = price of chocolates
+    #C1 = number of wrappers for a free chocolate
+    
+    answer += A // B
+    numOfWrappers = answer
+    
+    while numOfWrappers >= C1:
+        numOfWrappers += 1
+        numOfWrappers -= C1
+        answer += 1
+
+    print answer
