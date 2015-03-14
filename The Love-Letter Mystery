@@ -1,0 +1,30 @@
+#Created in Python
+
+def palCheck(a, b):
+    if a == b:
+        return True
+    else:
+        return False
+
+T = int(raw_input())
+changeList = []
+
+for i in range(T):
+    string = (raw_input()).lower()
+    reverseString = string[::-1]
+    numOfChanges = 0
+
+    for j in range(len(string) // 2):
+        a = string[j]
+        b = reverseString[j]
+        while palCheck(a, b) == False:
+            if ord(a) > ord(b):
+                a = chr(ord(a)-1)
+                numOfChanges += 1
+            elif ord(b) > ord(a):
+                b = chr(ord(b)-1)
+                numOfChanges += 1
+    changeList.append(numOfChanges)
+
+for num in changeList:
+    print num
