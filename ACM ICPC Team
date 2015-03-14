@@ -1,0 +1,31 @@
+data = []
+result = []
+
+N_M = raw_input()
+N = int(N_M.split()[0])
+M = int(N_M.split()[1])
+
+for i in range(N):
+    binary = raw_input()
+    data.append(binary)
+
+maxResult = 0
+
+for i in range(len(data)):
+    currentBin = data[i]
+    for j in range(i+1,len(data)):
+        resultBin = bin(int(data[i],2) | int(data[j],2))
+        possMax = resultBin.count('1')
+        result.append(resultBin)
+        if possMax > maxResult:
+            maxResult = possMax
+
+totalWithMax = 0
+
+for i in range(len(result)):
+    results = result[i].count('1')
+    if results == maxResult:
+        totalWithMax += 1
+
+print maxResult
+print totalWithMax
