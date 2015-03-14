@@ -1,0 +1,32 @@
+#Created in python
+
+def lonelyinteger(a):
+
+    if len(a) == 1:
+        answer = a[0]
+        return answer
+
+    a.sort()
+
+    count = 1
+    lengthA = len(a)
+    answer = a[lengthA - 1]
+
+    if a[0] != a[1]:
+        answer = a[0]
+        return answer
+
+    while count < (lengthA - 1):
+        if a[count] != a[count + 1] and a[count] != a[count - 1]:
+            answer = a[count]
+            return answer
+        else:
+            count += 1
+
+    return answer
+
+if __name__ == '__main__':
+    a = input()
+    b = map(int, raw_input().strip().split(" "))
+    loneInt = lonelyinteger(b)
+    print loneInt
