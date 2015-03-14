@@ -1,0 +1,33 @@
+#Created in python 
+
+def palCheck(string):
+    if string == string[::-1]:
+        return True
+    else:
+        return False
+
+string = raw_input()
+if palCheck(string) == True:
+    print "YES"
+else:
+    charList = list(string)
+    charList.sort()
+    string = ''.join(charList)
+
+    oddAmountOfChars = 0
+    index = 0
+
+    while oddAmountOfChars < 2 and index < len(string):
+        char = string[index]
+
+        num = string.count(char)
+
+        if num % 2 != 0:
+            oddAmountOfChars += 1
+
+        index = string.find(char) + num
+
+    if oddAmountOfChars >= 2:
+        print "NO"
+    else:
+        print "YES"
